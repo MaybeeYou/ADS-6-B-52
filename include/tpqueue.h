@@ -6,10 +6,11 @@
 
 template<typename T>
 class TPQueue {
+private:
   struct Node {
     T data;
     Node* next;
-    Node(const T& data) : data(data), next(nullptr) {}
+    explicit Node(const T& data) : data(data), next(nullptr) {}
   };
   Node* head;
 
@@ -25,7 +26,8 @@ public:
       head = newNode;
     } else {
       Node* current = head;
-      while (current->next != nullptr && data.prior <= current->next->data.prior) {
+      while (current->next != nullptr &&
+        data.prior <= current->next->data.prior) {
         current = current->next;
       }
       newNode->next = current->next;
