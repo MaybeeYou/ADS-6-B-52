@@ -6,7 +6,7 @@
 
 template<typename T>
 class TPQueue {
-private:
+ private:
   struct Node {
     T data;
     Node* next;
@@ -14,7 +14,7 @@ private:
   };
   Node* head;
 
-public:
+ public:
   TPQueue() : head(nullptr) {}
   bool is_empty() const {
     return head == nullptr;
